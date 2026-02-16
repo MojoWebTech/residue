@@ -1,0 +1,35 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "residue",
+	"main": "src/index.tsx",
+	"compatibility_date": "2025-02-14",
+	"observability": {
+		"enabled": true
+	},
+	"assets": {
+		"directory": "./public"
+	},
+	"vars": {
+		"ADMIN_USERNAME": "admin",
+		"R2_ACCESS_KEY_ID": "93a219df94daf1f260c47a4918c67cd2",
+		"R2_ACCOUNT_ID": "7ee7df491978ea0e2c9703f7d1dbe05d",
+		"R2_BUCKET_NAME": "residue"
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "residue-app",
+			"database_id": "be595bd6-ea07-411b-b7ea-ba26175446ab",
+			"migrations_dir": "migrations",
+			"remote": true
+		}
+	],
+	"r2_buckets": [
+		{
+			"binding": "BUCKET",
+			"bucket_name": "residue",
+			"remote": true,"preview_bucket_name": "residue"
+		}
+	],
+	"compatibility_flags": ["nodejs_compat"]
+}
